@@ -2,13 +2,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./App.css";
 
-// pages
-import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import Contact from "./pages/Contact.jsx";
-import Sweets from "./pages/Sweets.jsx";
+// pages (default exports under components/pages)
+import Home from "./components/pages/Home.jsx";
+import About from "./components/pages/About.jsx";
+import Contact from "./components/pages/Contact.jsx";
+import Sweets from "./components/pages/Sweets.jsx";
 
-// layout
+// layout (default export)
 import AppLayout from "./components/AppLayout.jsx";
 
 const router = createBrowserRouter([
