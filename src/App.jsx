@@ -1,43 +1,47 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+// layout (named export)
+import { AppLayout } from "./components/Layout/AppLayout";
 import "./App.css";
 
 // pages (default exports under components/pages)
-import Home from "./components/pages/Home.jsx";
-import About from "./components/pages/About.jsx";
-import Contact from "./components/pages/Contact.jsx";
-import Sweets from "./components/pages/Sweets.jsx";
+import Home from "./pages/Home"; 
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Sweets from "./pages/Sweets";
 
-// layout (default export)
-import AppLayout from "./components/AppLayout.jsx";
+
+// error page (named export)
+import { ErrorPage } from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
         element: <Home />,
       },
       {
-        path: "/About",
+        path: "about",
         element: <About />,
       },
       {
-        path: "/Contact",
+        path: "contact",
         element: <Contact />,
       },
       {
-        path: "/Sweets",
+        path: "sweets",
         element: <Sweets />,
       },
     ],
-  },
+  }
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router}> </RouterProvider>;
 };
 
 export default App;
